@@ -135,12 +135,12 @@ GET http://localhost:4000/api/v1/product/687b81279bde709f16b208bb
 
 
 ### Update first product (Cool T-shirt)
-PUT http://localhost:4000/api/v1/product/687b7a9889c3ffa7d0ce58ba
+PUT http://localhost:4000/api/v1/product/687b81279bde709f16b208bb
 Content-Type: application/json
 
 {
   "name": "Cool Printed T-shirt",
-  "description": "Updated: Soft cotton T-shirt with new print",
+  "description": "Updated: Soft cotton T-shirt with better new print",
   "price": 699,
   "category": "Fashion",
   "stock": 30
