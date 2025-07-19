@@ -1,0 +1,151 @@
+### Create a new product
+POST http://localhost:4000/api/v1/product/new
+Content-Type: application/json
+
+{
+  "name": "Cool T-shirt",
+  "description": "A comfortable cotton T-shirt",
+  "price": 499,
+  "images": [
+    {
+      "public_id": "sample_image_id",
+      "url": "http://example.com/image.jpg"
+    }
+  ],
+  "category": "Clothing",
+  "stock": 20,
+  "reviewsCount": 1,
+  "reviews": [
+    {
+      "name": "Meghana",
+      "rating": 5,
+      "comment": "Loved the quality!"
+    }
+  ]
+}
+
+
+### Create another product
+POST http://localhost:4000/api/v1/product/new
+Content-Type: application/json
+
+{
+  "name": "Wireless Headphones",
+  "description": "Over-ear noise cancelling headphones with Bluetooth support",
+  "price": 2999,
+  "images": [
+    {
+      "public_id": "headphones_001",
+      "url": "http://example.com/headphones.jpg"
+    }
+  ],
+  "category": "Electronics",
+  "stock": 50,
+  "reviewsCount": 2,
+  "reviews": [
+    {
+      "name": "Ankit",
+      "rating": 4,
+      "comment": "Great sound quality!"
+    },
+    {
+      "name": "Priya",
+      "rating": 5,
+      "comment": "Battery life is amazing!"
+    }
+  ]
+}
+
+### Create iPhone 15 Pro
+POST http://localhost:4000/api/v1/product/new
+Content-Type: application/json
+
+{
+  "name": "iPhone 15 Pro",
+  "description": "Apple iPhone 15 Pro with A17 Pro chip and titanium design.",
+  "price": 139999,
+  "images": [
+    {
+      "public_id": "iphone_15_pro_01",
+      "url": "http://example.com/iphone15pro.jpg"
+    }
+  ],
+  "category": "Electronics",
+  "stock": 15,
+  "reviewsCount": 3,
+  "reviews": [
+    {
+      "name": "Arjun",
+      "rating": 5,
+      "comment": "Amazing performance and camera!"
+    },
+    {
+      "name": "Sneha",
+      "rating": 4,
+      "comment": "Too expensive but worth it."
+    },
+    {
+      "name": "Rahul",
+      "rating": 5,
+      "comment": "Premium feel and blazing fast."
+    }
+  ]
+}
+
+
+### Create Samsung Galaxy S24 Ultra
+POST http://localhost:4000/api/v1/product/new
+Content-Type: application/json
+
+{
+  "name": "Samsung Galaxy S24 Ultra",
+  "description": "Samsung's flagship with S-Pen, 200MP camera, and AI enhancements.",
+  "price": 129999,
+  "images": [
+    {
+      "public_id": "s24ultra_01",
+      "url": "http://example.com/s24ultra.jpg"
+    }
+  ],
+  "category": "Electronics",
+  "stock": 25,
+  "reviewsCount": 2,
+  "reviews": [
+    {
+      "name": "Divya",
+      "rating": 5,
+      "comment": "Love the camera and stylus!"
+    },
+    {
+      "name": "Karan",
+      "rating": 4,
+      "comment": "Excellent display and performance."
+    }
+  ]
+}
+
+
+
+
+### get products
+GET http://localhost:4000/api/v1/products
+
+###get a product
+GET http://localhost:4000/api/v1/product/687b81279bde709f16b208bb
+
+
+### Update first product (Cool T-shirt)
+PUT http://localhost:4000/api/v1/product/687b7a9889c3ffa7d0ce58ba
+Content-Type: application/json
+
+{
+  "name": "Cool Printed T-shirt",
+  "description": "Updated: Soft cotton T-shirt with new print",
+  "price": 699,
+  "category": "Fashion",
+  "stock": 30
+}
+
+
+###delete product one
+DELETE http://localhost:4000/api/v1/product/687b7a9889c3ffa7d0ce58ba
