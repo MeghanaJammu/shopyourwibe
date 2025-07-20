@@ -3,6 +3,7 @@ const Product = require("../models/productModel");
 const { response } = require("../app");
 const ErrorHandler = require("../utils/errorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const ApiFeatures = require("../utils/features");
 
 //create Product -- admin
 exports.createProduct = catchAsyncErrors(async (request, response) => {
@@ -16,7 +17,11 @@ exports.createProduct = catchAsyncErrors(async (request, response) => {
 
 //get all products
 exports.getAllProducts = catchAsyncErrors(async (request, response) => {
-  const products = await Product.find();
+  const apiFeature = new ApiFeatures(Product.find(), request.query)
+    .search()
+    .filter();
+
+  const products = await apiFeature.query;
   response.status(200).json({ success: true, products });
 });
 
